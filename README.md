@@ -27,8 +27,8 @@ Bear's distributed spider framework
     - Assign config file to use, refer ds_config.py as template.
   - Argument '-s', '--spider':
     - Assign the spider implementation used, refer spider_sample.py as reference, 'parse' is the required interface to implement.
-  - Argument '-t', '--thread_number':
-    - Assign how many threads used. 0 is default, means the thread number equals the CPU core number.
+  - Argument '-t', '--thread_count':
+    - Assign how many threads used. 0 is default, means the thread count equals the CPU core count.
   - Usage:
     - python ds_worker.py -c ds_config -s spider_sample -t 2
     
