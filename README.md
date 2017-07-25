@@ -37,6 +37,5 @@ Bear's distributed spider framework
   - Run 'python ds_database.py' to create the tales, ds_config.py is used by default. Or you can use '-c' to assign the config file.
   - data.sql contains the sample data, you can fill it in the database for some experiment.
   
-  Wish you like it!
-  QQ: 859189803
-  
+Wish you like it!  
+QQ: 859189803  
