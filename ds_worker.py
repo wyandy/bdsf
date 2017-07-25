@@ -21,7 +21,7 @@ def parse_args():
                         help='',
                         default='spider_sample') # Assign spider file, don't use '.py' suffix.
     parser.add_argument('-t',
-                        '--thread_number',
+                        '--thread_count',
                         help='',
                         default=0,
                         type=int)
