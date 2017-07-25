@@ -1,3 +1,4 @@
+""" MySQL database """
 # coding:utf-8
 
 import inspect
