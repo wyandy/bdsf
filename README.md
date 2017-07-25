@@ -38,4 +38,8 @@ Bear's distributed spider framework
   - data.sql contains the sample data, you can fill it in the database for some experiment.
   
 Wish you like it!  
-QQ: 859189803  
+QQ: 859189803
+
+51CTO小广告：
+- 面向测试工程师的Python学习：http://edu.51cto.com/course/8711.html
+- 性能测试面必知必会系列：http://edu.51cto.com/course/10180.html
