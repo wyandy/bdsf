@@ -34,7 +34,7 @@ Bear's distributed spider framework
     
 - Data preparation:
   - Open ds_config.py, edit 'DB' to your local settings.
-  - Run 'python ds_database.py' to create the tales, ds_config.py is used by default. Or you can use '-c' to assign the config file.
+  - Run 'python ds_database.py' to create the tales, ds_config.py is used by default.
   - data.sql contains the sample data, you can fill it in the database for some experiment.
   
 Wish you like it!  
