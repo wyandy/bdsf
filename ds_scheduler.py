@@ -71,7 +71,7 @@ def retry(task_id, config):
     r = dd.Task.select().where(dd.Task.id == task_id)
     if r:
         task = r.get()
-        queue = dq.Queue(task.id, config.QUEUE) # 找到task对应的队列
+        queue = dq.Queue(task.id, config.QUEUE) # Find the coresponding queue of the task
         jobs = dd.Job.select().where((dd.Job.task_id == task_id) & (dd.Job.status != config.JS_FINISHED))
         for job in jobs:
             source = dd.Source.select().where(dd.Source.id == job.source_id).get()
@@ -86,16 +86,18 @@ def retry(task_id, config):
     else:
         raise Exception('Task %d not found.' % task_id)
 
-if __name__ == '__main__':
-    ARGS = parse_args()
+def main(args):
     # Use dynamic loading for config file, then we can use different config file for different task.
-    CONFIG = importlib.import_module(ARGS.config)
-    dd.init_database(CONFIG.DB)
-    if ARGS.action == 'create':
-        create_task(CONFIG)
-    elif ARGS.action == 'view':
-        view_task(ARGS.task_id, CONFIG)
-    elif ARGS.action == 'retry':
-        retry(ARGS.task_id, CONFIG)
+    config = importlib.import_module(args.config)
+    dd.init_database(config.DB)
+    if args.action == 'create':
+        create_task(config)
+    elif args.action == 'view':
+        view_task(args.task_id, config)
+    elif args.action == 'retry':
+        retry(args.task_id, config)
     else:
-        raise Exception('Unknown action: %s' % ARGS.action)
+        raise Exception('Unknown action: %s' % args.action)
+    
+if __name__ == '__main__':
+    main(parse_args())
